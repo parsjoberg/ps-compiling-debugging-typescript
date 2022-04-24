@@ -1,8 +1,13 @@
-//const Main = require('./app/Main');
-import { Main } from "./app/Main";
+import {Main} from "./app/Main";
+import {defaultState} from "./defaultState";
 
-new Main().render();
+const renderApp = ()=>{
 
-//Comment
-const message : string = 'A Typed message testing 2';
-console.log(message);
+    const rendered : string = new Main(defaultState).render();
+    let app = document.getElementById("App");
+    if(app)
+        app.innerHTML = rendered;
+
+}
+
+renderApp();
