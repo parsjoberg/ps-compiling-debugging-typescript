@@ -1,0 +1,22 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "removeComments": false,
+    //"lib": ["ES2018", "DOM"],
+    // singlefile funkar inte för node10, recommended    
+    //"outFile": "app/index.js",    
+    // använd t ex webpack för att baka ihop filer
+    "outDir": "dist/js",
+    "allowJs": false,
+    "sourceMap": true,
+  },
+  "include": ["**/src/**/*"],
+  "exclude": ["node_modules"],
+  "references": [
+    { "path": "./src/interfaces" }
+  ],
+  //använd tsc -w för att aktivera
+  "watchOptions": {
+    "excludeDirectories": ["**/node_modules", "app"],
+  }
+}
